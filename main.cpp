@@ -1,26 +1,29 @@
 #include <iostream>
-
 constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS];                       //NELEMENTS hiányzik egy "_"
-    std::cout << '1-100 ertekek duplazasa'             //"; hiánya" string + kettős aposztróf + std::endl 
-    for (int i = 0;)                                   //nem teljes ciklus + 1től induljon
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa" << std::endl;
+  
+    for (int i = 1; i<=N_ELEMENTS+1; i++)
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++)                            // hibás ciklus i<=N_ELEMENTS hiányzik 
+  
+    for (int i = 1; i<=N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:"                          //innen hiányzik az érték "b[i]"
+        std::cout << "Ertek:" << b[i] << std::endl;
     }    
+  
     std::cout << "Atlag szamitasa: " << std::endl;
     int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++)               //ciklusban ";" + 1től induljon amíg nem <=
+    for (int i = 1; i <= N_ELEMENTS; i++)
     {
-        atlag += b[i]                                  // ";" hiánya
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
     return 0;
 }
+
